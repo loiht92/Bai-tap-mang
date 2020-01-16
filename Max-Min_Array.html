@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gia tri lon nhat cua mang</title>
+</head>
+<body>
+<script>
+   let x=[-3,5,1,3,2,10];
+   let max=[0];
+   let min=[0];
+   let indexmax=0;
+   let indexmin=0;
+   for (i=0; i<x.length; i++){
+
+       if (max<x[i]){
+           max=x[i];
+           indexmax=i;
+       }else if (min>x[i]){
+           min=x[i];
+           indexmin=i;
+       }
+   }
+   document.write("Max Array is:" +max+" "+"at position"+" " +indexmax);
+   document.write("<br>");
+   document.write("Min Array is:" +min +" "+"at position"+" "+indexmin);
+
+
+</script>
+</body>
+</html>
