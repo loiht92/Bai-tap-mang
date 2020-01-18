@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma Tran Vuong</title>
+</head>
+<body>
+<script>
+
+    function tongduongcheomatranvuong(a) {
+        let total = 0;
+        for (let i = 0; i < a.length; i++) {
+            total += a[i][i]
+        }
+        return total;
+    }
+
+    let matranvuong = [
+        [1, 3, 5],
+        [2, -4, 7],
+        [3, 2, 1]
+    ];
+    document.write("Tong duong cheo ma tran vuong la:" + tongduongcheomatranvuong(matranvuong));
+
+</script>
+</body>
+</html>

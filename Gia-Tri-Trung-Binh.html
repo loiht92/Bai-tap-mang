@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [3, 6, 8, 9, 12, 14, 15];
+    let total = 0;
+    for (let i = 0; i < x.length; i++) {
+        total = total + x[i]
+    }
+    document.write("Tong cac phan tu la:" + total);
+    document.writeln("<br>");
+
+    let elements;
+    elements = x.length;
+    document.writeln("Cac phan tu co trong mang la :" + elements);
+    document.writeln("<br>");
+
+    let everagevalue;
+    everagevalue = total / elements;
+    document.writeln("Gia tri trung binh cac phan tu trong mang la:" + everagevalue);
+</script>
+</body>
+</html>

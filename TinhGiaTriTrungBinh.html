@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [3, 6, 8, 9, 12, 14, 15];
+    let max = x[0];
+
+    for (let i = 0; i < x.length; i++) {
+        if (max < x[i]) {
+            max = x[i];
+
+        }
+    }document.write("Gia tri lon nhat cua mang la:" + max);
+
+    let averageValue;
+    let total=0;
+    for (let i = 0; i < x.length; i++) {
+        total=total+x[i];
+        averageValue = (total/ x.length);
+    }
+    document.write("<br>");
+    document.write("Gia tri trung binh cua mang la:" + Math.round(averageValue*100)/100); // lam tron den 2 chu so sau dau phay//
+
+</script>
+</body>
+</html>
+

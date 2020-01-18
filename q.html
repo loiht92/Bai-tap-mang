@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let studentofclass= Array();
+    function input() {
+        let name;
+        do {
+            name = prompt("nhap ten sinh vien. (nhap 'q ' de ket thuc");
+            alert(name);
+            if (name !==' q')
+                studentofclass.push(name)
+
+        } while (name !== 'q' );
+    }
+
+    function show() {
+        document.write("So sinh vien :" +studentofclass.length +"<br>");
+        for (let name in studentofclass){
+            document.write(studentofclass[name] +"<br>");
+        }
+    }
+    input();
+    document.write("<br>Trước khi đảo ngược : <br>");
+
+    show();
+    document.write("<br>Sau khi đảo ngược : <br>");
+    studentofclass=studentofclass.reverse();
+
+    show();
+    document.write("Đảo giá trị hai phần tử đầu : <br>");
+    let temp=studentofclass[0];
+    studentofclass[0]=studentofclass[1];
+    studentofclass[1]=temp;
+
+    show();
+    document.write("Nối các phần tử : <br>");
+    document.write(studentofclass.join("<br>"));
+
+    show();
+    document.write("Xoá phần tử cuối mảng :<br>");//
+    studentofclass=studentofclass.pop();
+
+    show();
+    document.write("Thêm phần tử vào cuối mảng :<br>");//
+    studentofclass=studentofclass.push("Nguyễn Thị Lan");
+
+    show();
+    document.write("Xoá phần tử tại vị trí đầu mảng :<br>");
+    studentofclass=studentofclass.shift();
+
+    show();
+    document.write("Thêm phần tử vào vị trí đầu tiên của mảng :<br>");
+    studentofclass=studentofclass.unshift("Nguyễn Thị Minh");
+</script>
+
+</body>
+</html>

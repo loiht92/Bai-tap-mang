@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let realNumber = [2.3 , 4.5 , 1.3 , 5.7 , 3.5 , 2.5];
+    let total=0;
+    for (i=0; i<realNumber.length; i++){
+        total=total+realNumber[i]
+    } document.write( "Tổng cộng các phần tử trong mảng là: " +total);
+    document.write("<br>");
+
+    let elements;
+    elements=realNumber.length;
+    document.write("Số lượng phần tử có trong mảng là:" +elements);
+    document.write("<br>");
+
+    let medium;
+    medium=total/elements;
+    document.write("Giá trị trung bình của các phần tử trong mảng:" +medium);
+    document.write("<br>");
+
+    min=realNumber[0];
+    max=realNumber[0];
+    indexMin=0;
+    indexMax=0;
+    for (let i=0; i<realNumber.length; i++) {
+
+        if (min>realNumber[i]){
+            min=realNumber[i];
+            indexMin=i;
+
+        }else if (max<realNumber[i]){
+            max=realNumber[i];
+            indexMax=i;
+        }
+    }
+    document.write("Giá trị nhỏ nhất của mảng là:" +min+"<br>"+ "Tại vị trí:" +indexMin);
+    document.write("<br>");
+    document.write("Giá trị lớn nhất của mảng là:" +max+"<br>" +"Tại vị trí:" +indexMax)
+</script>
+</body>
+</html>

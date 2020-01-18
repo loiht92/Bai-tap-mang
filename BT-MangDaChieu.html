@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang nhieu chieu</title>
+</head>
+<body>
+<script>
+
+    let arr;
+    let soDong;
+    let soCot;
+
+    function khoiTao() {
+        soDong = prompt('nhap so dong');
+        soDong = Number.parseInt(soDong);
+        soCot = prompt('nhap so cot');
+        soCot = Number.parseInt(soCot);
+        let i, j;
+        arr = new Array(soDong);
+        for (i = 0; i < soDong; i++) {
+            arr[i] = new Array(soCot);
+            for (j = 0; j < soCot; j++)
+                arr[i][j] = Math.floor(Math.random() * 100);
+        }
+    }
+
+    function hienMang() {
+        let i, j;
+        document.writeln("<table border='1'>");
+        for (i = 0; i < soDong; i++) {
+            document.writeln("<tr>");
+            for (j = 0; j < soCot; j++)
+                document.write("<td>" + arr[i][j] + "</td>")
+        }
+        document.writeln("</table>")
+    }
+
+    function tongHang(id) {
+        let sum = 0, j;
+        for (j = 0; j < soCot; j++)
+            sum += arr[id][j];
+        return sum;
+    }
+
+    function tongCot(id) {
+        let sum = 0, i;
+        for (i = 0; i < soDong; i++)
+            sum += arr[i][id];
+        return sum;
+    }
+
+    function timMin() {
+        let i, j, min;
+        min = arr[0][0];
+        for (i = 0; i < soDong; i++)
+            for (j = 0; j < soCot; j++)
+                if (min > arr[i][j])
+                    min = arr[i][j];
+        return min;
+
+    }
+
+    function timMax() {
+        let i, j, max;
+        max = arr[0][0];
+        for (i = 0; i < soDong; i++)
+            for (j = 0; j < soCot; j++)
+                if (max < arr[i][j])
+                    max = arr[i][j];
+        return max;
+    }
+
+    function sapxep() {
+        let i = 0, j, tmp;
+        let tmpArr = new Array(soCot * soDong);
+        let len = soDong * soCot;
+        for (i = 0; i < len; i++) {
+            tmpArr[i] = arr[Math.floor(i / soCot)][i % soCot];
+        }
+        tmpArr.sort(function (a, b) {
+            return a - b;
+
+        });
+
+        for (i = 0; i < len; i++) {
+            arr[Math.floor(i / soCot)][i % soCot] = tmpArr[i];
+        }
+    }
+
+    function baocao() {
+        let i, j;
+        document.writeln("<table border='1'>");
+        let tongCot = new Array(soCot);
+        for (i = 0; i < soCot; i++) {
+            tongCot[i] = 0;
+        }
+
+        for (i = 0; i < soDong; i++) {
+            document.writeln("<tr>");
+            let tongHang = 0;
+            for (j = 0; j < soCot; j++) {
+
+                tongHang += arr[i][j];
+                tongCot[j] += arr[i][j];
+            }
+            document.write("<td><b>" + arr[i][j] + "</b></td>")
+
+        }
+
+        document.write("<td><b>" + tongHang() + "</b></td>");
+        document.writeln("</tr>")
+    }
+
+    for (i = 0; i < soCot; i++) {
+        document.write("<td><b>" + tongCot() + "</b></td>");
+    }
+    let tongcong = 0;
+    for (i = 0; i < soDong; i++) {
+        tongcong += tongCot[i];
+        document.write("<td><b>" + tongCot[i] + "</b></td>");
+    }
+    document.write("<td><b>" + tongcong + "</b></td>");
+    document.write("<table>");
+
+
+    function main() {
+        khoiTao();
+        hienMang();
+        document.writeln('<br>Tong hang :' + tongHang(1));
+        document.writeln('<br>Tong cot :' + tongCot(2));
+        document.writeln('<br>Gia tri nho nhat la :' + timMin());
+        document.writeln('<br>Gia tri nho nhat la :' + timMax());
+        document.writeln('<br>Mang sau khi sap xep la :');
+        sapxep();
+        hienMang();
+        baocao();
+    }
+    main();
+</script>
+</body>
+</html>
